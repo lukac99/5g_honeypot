@@ -18,5 +18,5 @@ def listen_for_ping():
             "src_ip": addr[0]  # IP naslov pošiljatelja
         }
         # zapis dodamo v log file
-        with open("app/logs/requests.log", "a") as f:
+        with open("/app/logs/requests.log", "a") as f:
             f.write(json.dumps(log_entry) + "\n")
