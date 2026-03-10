@@ -16,5 +16,5 @@ async def log_request(request: Request):
         "body": body.decode("utf-8", errors="ignore") # dekodira iz bytes v string
     }
 
-    with open("requests.log", "a", encoding="utf-8") as f:
+    with open("app/logs/requests.log", "a", encoding="utf-8") as f:
         f.write(json.dumps(log_entry) + "\n")  # prevedi dictionary v JSON zapis
