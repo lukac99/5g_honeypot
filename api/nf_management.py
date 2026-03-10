@@ -68,24 +68,3 @@ async def remove_nf_instance(nfInstanceId: str):
         raise HTTPException(status_code=404, detail="NF instance not found")
 
     return {"message": "NF deregistered", "nfInstanceId": nfInstanceId}
-
-
-
-
-
-
-
-
-
-
-
-
-#tega daj v discovery
-@router.get("/nnrf-nfm/v1/nf-instances/{nfInstanceId}")
-async def get_nf_instance(nfInstanceId: str):
-    nf = get_nf(nfInstanceId)
-
-    if not nf:
-        raise HTTPException(status_code=404, detail="NF instance not found")
-
-    return nf.model_dump()
